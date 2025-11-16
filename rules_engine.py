@@ -133,10 +133,3 @@ def processar_csv():
 
 
 processar_csv()
-
-print(dados.hum.min()) 
-print(dados.hum.max())
-print(dados.temp.min())
-print(dados.temp.max())
-print(dados.wind.min())
-print(dados.wind.max())
