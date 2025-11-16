@@ -1,0 +1,75 @@
+SE temperatura >= 30 E humidade <= 25 E vento >= 20 ENTÃO:
+  → Risco: ALTO
+  → Ação: Calor extremo e vento intenso — ativar alerta máximo; notificar Proteção Civil e encerrar acessos públicos.
+
+SE temperatura >= 30 E humidade <= 25 E vento < 20 ENTÃO:
+  → Risco: ALTO
+  → Ação: Temperatura muito alta — emitir aviso laranja e intensificar monitorização.
+
+SE temperatura >= 30 E 25 < humidade <= 50 E vento >= 20 ENTÃO:
+  → Risco: ALTO
+  → Ação: Calor elevado, humidade baixa e vento intenso — risco severo; mobilizar equipas de vigilância.
+
+SE temperatura >= 30 E 25 < humidade <= 50 E vento < 20 ENTÃO:
+  → Risco: MODERADO
+  → Ação: Calor forte mas humidade estabilizadora — observar condições sem necessidade de intervenção.
+
+SE temperatura >= 30 E humidade > 50 E vento >= 20 ENTÃO:
+  → Risco: MODERADO
+  → Ação: Vento intenso com humidade alta — emitir aviso laranja e manter atenção.
+
+SE temperatura >= 30 E humidade > 50 E vento < 20 ENTÃO:
+  → Risco: MODERADO
+  → Ação: Calor elevado mas humidade alta — manter vigilância normal.
+
+SE 20 <= temperatura < 30 E humidade <= 25 E vento >= 20 ENTÃO:
+  → Risco: ALTO
+  → Ação: Ar muito seco e vento forte — emitir aviso vermelho e reforçar controlo de ignições.
+
+SE 20 <= temperatura < 30 E humidade <= 25 E vento < 20 ENTÃO:
+  → Risco: MODERADO
+  → Ação: Calor seco com vento fraco — manter monitorização ativa.
+
+SE 20 <= temperatura < 30 E 25 < humidade <= 50 E vento >= 20 ENTÃO:
+  → Risco: MODERADO
+  → Ação: Vento forte com humidade média — aviso laranja e reforço de observação.
+
+SE 20 <= temperatura < 30 E 25 < humidade <= 50 E vento < 20 ENTÃO:
+  → Risco: BAIXO
+  → Ação: Condições estáveis — risco controlado, vigilância de rotina suficiente.
+
+SE 20 <= temperatura < 30 E humidade > 50 ENTÃO:
+  → Risco: BAIXO
+  → Ação: Condições seguras — calor moderado e humidade adequada.
+
+SE temperatura < 20 E humidade <= 25 E vento >= 20 ENTÃO:
+  → Risco: MODERADO
+  → Ação: Vento muito forte em ar seco — atenção reforçada, possíveis ignições.
+
+SE temperatura < 20 E humidade <= 25 E vento < 20 ENTÃO:
+  → Risco: BAIXO
+  → Ação: Ar seco mas temperaturas baixas — manter observação de rotina.
+
+SE temperatura < 20 E humidade > 25 ENTÃO:
+  → Risco: BAIXO
+  → Ação: Condições seguras — risco de incêndio mínimo.
+
+SE evento = 'Smoke' ENTÃO:
+  → Risco: BAIXO
+  → Ação: Deteção de fumo — enviar equipa de verificação imediata.
+
+SE evento = 'Heat' E temperatura >= 35 ENTÃO:
+  → Risco: BAIXO
+  → Ação: Evento de calor — reforçar comunicação pública e alertar serviços.
+
+SE evento = 'Noise' ENTÃO:
+  → Risco: BAIXO
+  → Ação: Ruído anómalo — acionar manutenção preventiva.
+
+SE vento >= 80 ENTÃO:
+  → Risco: BAIXO
+  → Ação: Rajadas superiores a 80 km/h — emitir aviso meteorológico e restringir acessos.
+
+SE temperatura <= 5 ENTÃO:
+  → Risco: BAIXO
+  → Ação: Temperaturas muito baixas — monitorizar condições e garantir segurança operacional.
